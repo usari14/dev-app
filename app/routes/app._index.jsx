@@ -1,4 +1,4 @@
-import  db  from "../db.server"; // your database connection
+import db from "../db.server"; // your database connection
 import { authenticate } from "../shopify.server";
 import { sendWelcomeEmail } from "./sendEmail/sendEmail";
 import { useLoaderData } from "@remix-run/react";
@@ -32,13 +32,10 @@ export async function loader({ request }) {
   return { email: email?.email };
 }
 
-export default function GetEmail() {
-  const { email } = useLoaderData();
-
+const Index = () => {
   return (
-    <div>
-      <h2>Installation Complete!</h2>
-      <p>Email Sent To: {email || "Unknown"}</p>
-    </div>
+    <div>app._index</div>
   )
 }
+
+export default Index
